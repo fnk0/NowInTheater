@@ -107,7 +107,7 @@ public final class MovieUtils {
 
 ## Adding some Assets:
 
-To speed up this tutorial I'm providing you with the assets used in the app. Simple download [this file](), unzip and paste inside res. Select override for all
+To speed up this tutorial I'm providing you with the assets used in the app. Simple download [this file](https://github.com/fnk0/NowInTheater/blob/master/app/src/main/res/assets.zip), unzip and paste inside res. Select override for all
 
 ### Defining our Styles:
 
