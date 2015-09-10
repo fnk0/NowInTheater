@@ -27,17 +27,25 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(getLayoutResource(), container, false);
-        ButterKnife.bind(this, v);
-        return v;
+        View v = inflater.inflate(getLayoutResource(), container, false); // Inflate the view for this Layout
+        ButterKnife.bind(this, v); // Bind the views of this Fragment
+        return v; // Return the inflated and binded view
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        ButterKnife.unbind(this); // Unbind the views
     }
 
+    /**
+     *
+     * Abstract method that all classes that extends BaseFragment should implement.
+     * Should always return a Layout reference. Hence the @LayoutRes tag
+     *
+     * @return
+     *      The ID of the layout to be used by this Fragment
+     */
     @LayoutRes
     protected abstract int getLayoutResource();
 }

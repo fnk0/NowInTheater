@@ -37,7 +37,7 @@ import timber.log.Timber;
  * @since 9/7/15.
  */
 public class MoviesFragment extends BaseRecyclerListFragment
-        implements ItemCallback, RxCallback<Movies>, OnScrolledCallback {
+        implements ItemCallback<View>, RxCallback<Movies>, OnScrolledCallback {
 
     MoviesAdapter mAdapter;
     List<Movie> mItems;

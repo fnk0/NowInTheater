@@ -1,7 +1,5 @@
 package com.gabilheri.nowinteather.base;
 
-import android.view.View;
-
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
  *
@@ -9,8 +7,6 @@ import android.view.View;
  * @version 1.0
  * @since 9/7/15.
  */
-public interface ItemCallback {
-
-    void onItemClick(View v);
-
+public interface ItemCallback<T> {
+    void onItemClick(T t);
 }

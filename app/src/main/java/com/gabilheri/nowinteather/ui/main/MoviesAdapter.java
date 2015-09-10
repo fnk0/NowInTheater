@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class MoviesAdapter extends RecyclerView.Adapter<MovieHolder> {
 
-    ItemCallback mCallback;
+    ItemCallback<View> mCallback;
     List<Movie> movies;
 
     public MoviesAdapter(List<Movie> movies, ItemCallback callback) {

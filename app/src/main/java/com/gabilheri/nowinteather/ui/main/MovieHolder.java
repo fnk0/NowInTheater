@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  */
 public class MovieHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    ItemCallback mCallback;
+    ItemCallback<View> mCallback;
 
     @Bind(R.id.item_title)
     TextView movieTitle;
@@ -32,7 +32,7 @@ public class MovieHolder extends RecyclerView.ViewHolder implements View.OnClick
     @Bind(R.id.item_rating_bar)
     RatingBar ratingBar;
 
-    public MovieHolder(View itemView, ItemCallback mCallback) {
+    public MovieHolder(View itemView, ItemCallback<View> mCallback) {
         this(itemView);
         this.mCallback = mCallback;
     }

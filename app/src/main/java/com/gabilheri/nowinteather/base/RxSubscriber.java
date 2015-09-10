@@ -20,6 +20,8 @@ public class RxSubscriber<T> extends Subscriber<T> {
 
     @Override
     public void onCompleted() {
+        // onCompleted is called after all the Observables of this Subscription have finished
+        // We unsubscribe to not hold a reference to our activity and avoid Memory leaks
         unsubscribe();
     }
 

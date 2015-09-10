@@ -9,7 +9,19 @@ package com.gabilheri.nowinteather.base;
  */
 public interface RxCallback<T> {
 
+    /**
+     * This method is called each time a item is emitted by our Observable
+     *
+     * @param data
+     *      The emitted data
+     */
     void onDataReady(T data);
-    void onDataError(Throwable e);
 
+    /**
+     * Called when there is a error on our stream
+     *
+     * @param e
+     *      The exception throw
+     */
+    void onDataError(Throwable e);
 }
