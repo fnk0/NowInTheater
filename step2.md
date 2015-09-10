@@ -120,7 +120,21 @@ and add the following (Feel free to put any other color you want):
 <color name="primary_dark">#0a7e07</color>
 <color name="accent_color">#e84e40</color>
 <color name="window_background">#eeeeee</color>
+<color name="grey_200">#eeeeee</color>
 ```
+
+### Dimens
+
+Open the file res/dimens.xml and copy this dimensions:
+
+```xml
+dimen name="image_width">120dp</dimen>
+<dimen name="image_final_width">32dp</dimen>
+
+<dimen name="card_margin">16dp</dimen>
+<dimen name="fab_margin">16dp</dimen>
+```
+
 
 ### Defining our Styles:
 
