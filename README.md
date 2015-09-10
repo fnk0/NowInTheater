@@ -21,9 +21,8 @@ This tutorial aims to show the usage of some advanced java/android libraries to 
 * Using RecyclerView with GridLayout to handle different screen sizes
 * Design Support library animations
 
-This tutorial assumes that you already have a good understanding of Java and some knowledge of Android
+This tutorial assumes that you already have a good understanding of Java and some knowledge of Android. At some points I will just give you some code to Copy/Paste (specially the XML layout ones).
 I will briefly explain most of the concepts and the code but for a deeper understanding I will redirect you to a WebPage of the library or a specific blog pos about it
-
 
 ### Let's get started!!
 
@@ -81,5 +80,5 @@ apt "org.parceler:parceler:1.0.3"
 
 If you see a yellow ribbon on your gradle file click on **sync now** otherwise find the button **Sync Project with Gradle Files** on the toolbar.
 
-Now that we have the setup done let's go to [Step 2](https://github.com/fnk0/NowInTheater/step2.md) and actually start coding!!
+Now that we have the setup done let's go to [Step 2](https://github.com/fnk0/NowInTheater/blob/master/step2.md) and actually start coding!!
 

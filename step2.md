@@ -1,0 +1,78 @@
+## The Basics
+
+We all know that java is a OOP language and one of the perks of using a OOP language is the ability to use inheritance and composition to abstract our code.
+Android uses the same concepts. To build any android app you will at least extend Activity.
+
+#### The application class
+
+In android the Application class is by default a [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) making it perfect to hold any references for something we are planing to use through the application, avoiding extra initialization and memory leaks.
+The application class is also the 1st thing that gets instantiated by the App. Making it a perfect place to start some of our libraries/
+
+###### Note: DO NOT put a LOT of code inside onCreate... the more code you have there the longer will take for the app to boot.
+
+We are going to use the Application class to instantiate some of our libraries. Create a class called **MoviesApp** and extend **Application**
+Inside OnCreate we are going to instantiate LeakCanary, Timber, Stetho and also expose a reference to a instance of our Application.
+
+```java
+public class MoviesApp extends Application {
+
+    private static MoviesApp mInstance;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+
+        LeakCanary.install(this);
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+            Stetho.initialize(
+                    Stetho.newInitializerBuilder(this)
+                            .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                            .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
+                            .build());
+        }
+    }
+
+    public static MoviesApp instance() {
+        return mInstance;
+    }
+}
+```
+
+Our application class should look somewhat like this now.
+
+##### Making our app using our custom application class
+
+1. Open AndroidManifest.xml
+2. Inside the application tag add the following: ```android:name=".MoviesApp"```
+
+While we are here... let's add the Internet permission that we will need later.
+
+Add the following permission to the app:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+### Constants
+
+We are going to need some constants.. create a file named **Const** or whatever you want and add the following constants
+
+```java
+public static final String API_KEY = "7ue5rxaj9xn4mhbmsuexug54"; // We need this to make APi Calls
+public static final String MOVIE = "movie";
+public static final String PIC_INIT_URL = "dkpu1ddg7pbsk";
+public static final String TRANSITION_IMAGE = "imageTransition";
+public static final String LIST_POSITION = "listPosition";
+```
+
+###### Note: If you want your own Api Key [Click here](http://developer.rottentomatoes.com/member/register). I can not guarantee this key working past September 10th.
+
+### Adding the Layouts:
+
+[Click here](https://github.com/fnk0/NowInTheater/tree/master/app/src/main/res/layout) and copy all these layouts. To understand more about some of those new layouts such as CoordinatorLayout and AppBarLayout [click here](http://android-developers.blogspot.com/2015/05/android-design-support-library.html)
+
+
+

@@ -8,13 +8,9 @@ package com.gabilheri.nowinteather;
  * @since 9/7/15.
  */
 public class Const {
-
-//    public static final String API_KEY = "ybjpnbte3pndtjvwrnhqnxpj";
     public static final String API_KEY = "7ue5rxaj9xn4mhbmsuexug54";
-
     public static final String MOVIE = "movie";
     public static final String PIC_INIT_URL = "dkpu1ddg7pbsk";
     public static final String TRANSITION_IMAGE = "imageTransition";
     public static final String LIST_POSITION = "listPosition";
-
 }

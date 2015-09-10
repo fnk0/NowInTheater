@@ -5,6 +5,7 @@ import android.app.Application;
 import com.facebook.stetho.Stetho;
 import com.gabilheri.nowinteather.data.api.Api;
 import com.gabilheri.nowinteather.data.api.ApiClient;
+import com.squareup.leakcanary.LeakCanary;
 
 import timber.log.Timber;
 
@@ -25,9 +26,10 @@ public class MoviesApp extends Application {
         super.onCreate();
         mInstance = this;
 
+        LeakCanary.install(this);
+
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
-
             Stetho.initialize(
                     Stetho.newInitializerBuilder(this)
                             .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
