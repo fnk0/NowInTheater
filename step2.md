@@ -128,7 +128,7 @@ and add the following (Feel free to put any other color you want):
 Open the file res/dimens.xml and copy this dimensions:
 
 ```xml
-dimen name="image_width">120dp</dimen>
+<dimen name="image_width">120dp</dimen>
 <dimen name="image_final_width">32dp</dimen>
 
 <dimen name="card_margin">16dp</dimen>
