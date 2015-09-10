@@ -2,7 +2,7 @@
 
 This tutorial aims to show the usage of some advanced java/android libraries to speed up Android development.
 
-- Libraries we are going to  use:
+###### Libraries we are going to  use:
 * [RxJava / RxAndroid](https://github.com/ReactiveX/RxAndroid)
 * [Retrofit 1.9](http://square.github.io/retrofit/)
 * [Picasso](http://square.github.io/picasso/)
@@ -13,7 +13,7 @@ This tutorial aims to show the usage of some advanced java/android libraries to 
 * [ButterKnife](http://jakewharton.github.io/butterknife/)
 * [Parceler](https://github.com/johncarl81/parceler)
 
-- Things you will learn:
+###### Things you will learn:
 * Efficient network requests
 * Efficient image loading
 * Gracefully handle rotation changes
