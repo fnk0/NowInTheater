@@ -69,6 +69,39 @@ public static final String LIST_POSITION = "listPosition";
 public static final String CURRENT_PAGE = "currentPage";
 ```
 
+### Utils:
+
+Most apps have utilities class which holds some Static methods used across the application. Since the rotten tomatoes API only gives us VERY small thumbnail images
+We are going to have a method here to modify the URL to get what we want.
+
+Create a class named MovieUtils and add the following code:
+
+```java
+// final makes this class not be able to be extended
+public final class MovieUtils {
+
+    // Makes this class not be able to be Instantiated
+    // i.e new MovieUtils()
+    private MovieUtils() {}
+
+    /**
+     * Modifies the URL to get a full size image rather than a VERY small image
+     * @param url
+     *      The image URL
+     * @return
+     *      The modified URL
+     */
+    public static String getHighResPicUrl(String url) {
+        String[] splitUrl = url.split(Const.PIC_INIT_URL);
+        if(splitUrl.length > 1) {
+            return String.format("http://%s%s", Const.PIC_INIT_URL, splitUrl[1]);
+        } else {
+            return url;
+        }
+    }
+}
+```
+
 ###### Note: If you want your own Api Key [Click here](http://developer.rottentomatoes.com/member/register). I can not guarantee this key working past September 10th.
 
 ### Adding the Layouts:

@@ -195,7 +195,7 @@ Our fragment will extend **BaseRecyclerListFragment** and implement or **RxCallb
 
 ```java
 public class MoviesFragment extends BaseRecyclerListFragment
-        implements RxCallback<MovieResponse>, OnScrolledCallback {
+        implements ItemCallback<View>, RxCallback<MovieResponse>, OnScrolledCallback {
 
     MoviesAdapter mAdapter;
     List<Movie> mItems;
@@ -266,6 +266,11 @@ public class MoviesFragment extends BaseRecyclerListFragment
                 .observeOn(AndroidSchedulers.mainThread())
                 // We make a new Subscriber that will receive the data inside onNext
                 .subscribe(new RxSubscriber<>(this));
+    }
+
+     @Override
+    public void onItemClick(View v) {
+        // Code to open the detail will go here.
     }
 
     @Override
@@ -343,3 +348,12 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
     addFragmentToContainer(mFragment, Const.MOVIE);
 }
 ```
+
+### Run the app!!
+
+Run the app make sure everything works!! You should be seeing a list of movies from Rotten tomatoes!
+Btw...  you can Open google chrome and go to chrome://inspect and watch the network calls using chrome dev tools thanks to Stetho
+
+Uff!! We are almost done... we just need to add the DetailActivity and code to respond to item clicks
+
+Let's to our [final step](https://github.com/fnk0/NowInTheater/blob/master/step6.md)

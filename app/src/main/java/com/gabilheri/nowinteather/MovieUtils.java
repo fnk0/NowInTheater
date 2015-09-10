@@ -7,8 +7,20 @@ package com.gabilheri.nowinteather;
  * @version 1.0
  * @since 9/7/15.
  */
-public class MovieUtils {
+// final makes this class not be able to be extended
+public final class MovieUtils {
 
+    // Makes this class not be able to be Instantiated
+    // i.e new MovieUtils()
+    private MovieUtils() {}
+
+    /**
+     * Modifies the URL to get a full size image rather than a VERY small image
+     * @param url
+     *      The image URL
+     * @return
+     *      The modified URL
+     */
     public static String getHighResPicUrl(String url) {
         String[] splitUrl = url.split(Const.PIC_INIT_URL);
         if(splitUrl.length > 1) {
@@ -17,5 +29,4 @@ public class MovieUtils {
             return url;
         }
     }
-
 }

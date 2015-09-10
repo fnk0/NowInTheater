@@ -26,6 +26,7 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -89,15 +90,26 @@ public class MoviesFragment extends BaseRecyclerListFragment
 
     @Override
     public void onItemClick(View v) {
-        ImageView imageView = (ImageView) v.findViewById(R.id.item_image);
+        // v is the itemView from our Adapter
+
+        // Retrieve our MovieObject from the Tag set to the ItemView
         Movie movie = (Movie) v.getTag(R.id.movie);
+
+        // Create a new intent
         Intent intent = new Intent(getActivity(), DetailActivity.class);
+
+        // Add the Movie to the extras  bundle
         intent.putExtra(Const.MOVIE, Parcels.wrap(movie));
+
+        // If we are in Lollipop we are going to have a cool transition Animation
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Gets a reference to our ImageView
+            ImageView imageView = ButterKnife.findById(v, R.id.item_image);
             // This will animate the transition in between the list and the DetailActivity
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(getActivity(), imageView, Const.TRANSITION_IMAGE);
             getActivity().startActivity(intent, options.toBundle());
         } else {
+            // Otherwise we just Start this activity
             getActivity().startActivity(intent);
         }
     }

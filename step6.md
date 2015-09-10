@@ -1,33 +1,23 @@
-package com.gabilheri.nowinteather.ui.detail;
+## Step 6. The DetailActivity
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.widget.AppCompatRatingBar;
-import android.support.v7.widget.AppCompatTextView;
-import android.view.View;
-import android.widget.ImageView;
+This is a extra step.. so I will go into less details here...
 
-import com.gabilheri.nowinteather.Const;
-import com.gabilheri.nowinteather.MovieUtils;
-import com.gabilheri.nowinteather.R;
-import com.gabilheri.nowinteather.base.BaseActivity;
-import com.gabilheri.nowinteather.data.endpoints.Movie;
-import com.squareup.picasso.Picasso;
+1. Create a class name DetailActivity
+2. Add the following to the Manifest
 
-import org.parceler.Parcels;
+```xml
+<!-- the android:name="" may change... depending on where you created your file -->
+<activity
+    android:name=".ui.detail.DetailActivity"
+    android:label="@string/app_name" />
+```
 
-import butterknife.Bind;
-import butterknife.OnClick;
+3. Make DetailActivity extend BaseActivity
 
-/**
- * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
- *
- * @author Marcus Gabilheri
- * @version 1.0
- * @since 9/7/15.
- */
+DetailActivity code:
+
+```java
+
 public class DetailActivity extends BaseActivity {
 
     @Bind(R.id.collapsing_toolbar)
@@ -103,3 +93,25 @@ public class DetailActivity extends BaseActivity {
         return R.layout.activity_detail;
     }
 }
+```
+
+### Responding to events inside MoviesFragment
+
+Now open MainActivity again and find the **onItemClick(View v)** method and make it look like this:
+
+```java
+@Override
+public void onItemClick(View v) {
+    ImageView imageView = ButterKnife.findById(v, R.id.item_image);
+    Movie movie = (Movie) v.getTag(R.id.movie);
+    Intent intent = new Intent(getActivity(), DetailActivity.class);
+    intent.putExtra(Const.MOVIE, Parcels.wrap(movie));
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        // This will animate the transition in between the list and the DetailActivity
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(getActivity(), imageView, Const.TRANSITION_IMAGE);
+        getActivity().startActivity(intent, options.toBundle());
+    } else {
+        getActivity().startActivity(intent);
+    }
+}
+```
