@@ -189,6 +189,7 @@ Inside integers.xml add the following code:
 ```
 
 Now inside **res**, create a folder named **values-land** and copy the integers.xml file inside. Change the value of num_cols for landscape to 3.
+You can take a look at the folders I have in this repository in res/values to see which other configurations you can have. (i.e. for tablets in landscape show 5 columns rather than 3, etc..)
 
 ```java
 public abstract class BaseRecyclerListFragment extends BaseFragment {
@@ -268,7 +269,7 @@ public interface RxCallback<T> {
 #### The RxSubscriber
 
 This is just a convenience class that I like to use when dealing with RxJava. Is not necessary but convenient.
-Makes me not forget to unsubscribe a Subscriber and also automatically logs
+Makes me not forget to unsubscribe a Subscriber and also automatically logs an exception when a error happens
 
 ```java
 public class RxSubscriber<T> extends Subscriber<T> {

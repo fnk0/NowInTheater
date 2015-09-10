@@ -156,7 +156,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieHolder> {
 
         Picasso.with(holder.itemView.getContext())
                 .load(MovieUtils.getHighResPicUrl(movie.getPosters().getThumbnail())) // Loads the Thumbnail
-                .error(R.drawable.poster_default_thumb) // We fall back to the default Thumbnail in case of page load
+                .error(R.drawable.poster_default_thumb) // We fall back to the default Thumbnail in case of fail
                 .fit() // Resizes the image to fit the ImageView and save memory
                 .centerCrop() // Centers the image in the ImageView and crop extra elements
                 .into(holder.itemThumbnail); // The ImageView on which load the image
@@ -191,7 +191,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieHolder> {
 So now that we have our MovieHolder and our MoviesAdapter for our list we are going to make the fragment that will hold that list
 Good news for you... we already have part of the code for this fragment written inside BaseRecyclerListFragment
 
-Our fragment will extend **BaseRecyclerListFragment** and implement or **RxCallback<MovieResponse>** and **OnScrolledCallback**
+Our fragment will extend **BaseRecyclerListFragment** and implement or **ItemCallback<View>**, **RxCallback<MovieResponse>** and **OnScrolledCallback**
 
 ```java
 public class MoviesFragment extends BaseRecyclerListFragment
