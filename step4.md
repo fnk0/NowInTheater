@@ -41,7 +41,8 @@ Now copy the entire response from the API and head over to [http://www.jsonschem
 7. Click on Jar to download a jar file with your classes
 8. Change the file extension to .zip
 9. Unzip and copy all the generated classes into your endpoints package.
-10. You are ready to go! Take a look on the generated classes and think for a second how many hours of typing you just saved!
+10. Replace ``` @Generated("org.jsonschema2pojo") ``` with ``` @Parcel ``` for each one of the Pojo's
+11. You are ready to go! Take a look on the generated classes and think for a second how many hours of typing you just saved!
 
 
 ### Coding the Api
