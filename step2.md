@@ -109,6 +109,19 @@ public final class MovieUtils {
 
 To speed up this tutorial I'm providing you with the assets used in the app. Simple download [this file](https://github.com/fnk0/NowInTheater/blob/master/app/src/main/res/assets.zip), unzip and paste inside res. Select override for all
 
+## Colors
+
+Create a file named colors.xml inside res/values
+
+and add the following:
+
+```xml
+<color name="primary">#259b24</color>
+<color name="primary_dark">#0a7e07</color>
+<color name="accent_color">#e84e40</color>
+<color name="window_background">#eeeeee</color>
+```
+
 ### Defining our Styles:
 
 Open res/styles.xml and paste the following code:
