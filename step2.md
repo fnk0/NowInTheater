@@ -113,7 +113,7 @@ To speed up this tutorial I'm providing you with the assets used in the app. Sim
 
 Create a file named colors.xml inside res/values
 
-and add the following:
+and add the following (Feel free to put any other color you want):
 
 ```xml
 <color name="primary">#259b24</color>
