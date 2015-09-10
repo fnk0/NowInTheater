@@ -2,7 +2,7 @@
 
 This tutorial aims to show the usage of some advanced java/android libraries to speed up Android development.
 
-It was written to be used by GDG OSU Stillwater, OK but you are free to rehuse for any purpose yuou want!
+It was written to be used by GDG OSU Stillwater, OK but you are free to reuse for any purpose you want!
 
 For any questions / concerns email: marcusandreog@gmail.com
 
