@@ -282,8 +282,10 @@ public class MoviesFragment extends BaseRecyclerListFragment
 
     @Override
     public void onDataError(Throwable e) {
-        // If we have a error downloading the data we tell the user with a SnackBar
-        Snackbar.make(mContainer, "Error downloading the Movie data. Try again later", Snackbar.LENGTH_LONG).show();
+         // If we have a error downloading the data we tell the user with a SnackBar
+        if (getView() != null) {
+            Snackbar.make(getView(), "Error downloading the Movie data. Try again later", Snackbar.LENGTH_LONG).show();
+        }
     }
 
     @Override
