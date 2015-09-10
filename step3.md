@@ -1,33 +1,21 @@
-package com.gabilheri.nowinteather.base;
+## Coding the base classes
 
-import android.annotation.TargetApi;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.res.Resources;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.ColorRes;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
+Now that we have our layouts in place we are going to code the base classes. Create a package called base and create the following classes.
 
-import com.gabilheri.nowinteather.R;
+* BaseActivity
+* BaseFragment
+* BaseRecyclerListFragment
+* **interface** ItemCallback
+* **interface** RxCallback
+* **interface** RxSubscriber
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+#### BaseActivity
 
-/**
- * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
- *
- * @author Marcus Gabilheri
- * @version 1.0
- * @since 9/7/15.
- */
+Our BaseActivity class will hold some of the basics that will be common to all our Activities such as a reference to the FragmentManager, the Toolbar and other stuff.
+
+Here is the code of the BaseActivity (Heavily commented). For a detailed explanation of ButterKnife [click here](http://jakewharton.github.io/butterknife/)
+
+```java
 public abstract class BaseActivity extends AppCompatActivity {
 
     /**
@@ -151,3 +139,4 @@ public abstract class BaseActivity extends AppCompatActivity {
         throw new Resources.NotFoundException("Could not find a container with R.id.container");
     }
 }
+```

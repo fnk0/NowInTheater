@@ -74,5 +74,4 @@ public static final String LIST_POSITION = "listPosition";
 
 [Click here](https://github.com/fnk0/NowInTheater/tree/master/app/src/main/res/layout) and copy all these layouts. To understand more about some of those new layouts such as CoordinatorLayout and AppBarLayout [click here](http://android-developers.blogspot.com/2015/05/android-design-support-library.html)
 
-
-
+###### Now let's go to [Step 3](https://github.com/fnk0/NowInTheater/blob/master/step3.md) and code base classes!
