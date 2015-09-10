@@ -97,7 +97,7 @@ public class DetailActivity extends BaseActivity {
 
 ### Responding to events inside MoviesFragment
 
-Now open MainActivity again and find the **onItemClick(View v)** method and make it look like this:
+Now open MoviesFragment again and find the **onItemClick(View v)** method and make it look like this:
 
 ```java
 @Override
