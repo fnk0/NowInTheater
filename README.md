@@ -2,6 +2,10 @@
 
 This tutorial aims to show the usage of some advanced java/android libraries to speed up Android development.
 
+It was written to be used by GDG OSU Stillwater, OK but you are free to rehuse for any purpose yuou want!
+
+For any questions / concerns email: marcusandreog@gmail.com
+
 ###### Libraries we are going to  use:
 * [RxJava / RxAndroid](https://github.com/ReactiveX/RxAndroid)
 * [Retrofit 1.9](http://square.github.io/retrofit/)

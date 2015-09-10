@@ -115,3 +115,15 @@ public void onItemClick(View v) {
     }
 }
 ```
+
+### Run The app!
+
+Run the app again and try to navigate to the DetailActivity.
+
+### We are done!!
+
+Now that we are done... If you haven't already try to read/understand the code, now is a good time to do it.
+
+Try paying detail to what is going on and ask questions if you can not understand anything. The repositories of each of the 3rd party libraries that I mentioned is a good point to start also.
+
+For any questions email marcusandreog@gmail.com
