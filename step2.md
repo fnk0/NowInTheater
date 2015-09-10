@@ -104,6 +104,11 @@ public final class MovieUtils {
 
 ###### Note: If you want your own Api Key [Click here](http://developer.rottentomatoes.com/member/register). I can not guarantee this key working past September 10th.
 
+
+## Adding some Assets:
+
+To speed up this tutorial I'm providing you with the assets used in the app. Simple download [this file](), unzip and paste inside res. Select override for all
+
 ### Defining our Styles:
 
 Open res/styles.xml and paste the following code:
@@ -140,8 +145,36 @@ Open res/styles.xml and paste the following code:
     <item name="android:textAppearance">?textAppearanceListItem</item>
 </style>
 ```
-##3
 
+###### Create a folder named values-v21
+
+Create a file named styles.xml and add the following code.
+This is just important for some cool transition animations and translucent status bar on Lollipop. This will not be used by older versions of Android
+
+```xml
+<resources>
+
+  <!-- if an app have Lollipop installed will use this Style -->
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_dark</item>
+    <item name="colorAccent">@color/accent_color</item>
+    <item name="android:windowBackground">@color/window_background</item>
+
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+
+    <item name="android:windowContentTransitions">true</item>
+    <!-- enable overlapping of exiting and entering activities-->
+    <item name="android:windowAllowEnterTransitionOverlap">true</item>
+    <item name="android:windowAllowReturnTransitionOverlap">true</item>
+
+  </style>
+</resources>
+```
 
 ### Adding the Layouts:
 
