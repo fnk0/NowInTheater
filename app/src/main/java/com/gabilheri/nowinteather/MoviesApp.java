@@ -18,8 +18,8 @@ import timber.log.Timber;
  */
 public class MoviesApp extends Application {
 
-    private static MoviesApp mInstance;
-    private Api mApi;
+    static MoviesApp mInstance;
+    Api mApi;
 
     @Override
     public void onCreate() {
@@ -42,6 +42,17 @@ public class MoviesApp extends Application {
         return mInstance;
     }
 
+
+
+    /**
+     * If the api is null them we make a new instance
+     * Otherwise we just return it
+     * This technique is called Lazy Instantiation allowing us to only instantiate singleton
+     * Objects when we actually need them rather than keeping objects not used in Memory
+     *
+     * @return
+     *      A instance of the Api
+     */
     public Api api() {
         if(mApi == null) {
             mApi = ApiClient.initApi(this);

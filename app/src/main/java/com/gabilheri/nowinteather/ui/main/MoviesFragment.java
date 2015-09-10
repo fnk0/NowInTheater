@@ -111,24 +111,36 @@ public class MoviesFragment extends BaseRecyclerListFragment
      */
     void getMovies(int page) {
         mCurrentPage = page;
-        MoviesApp.instance().api().getMovies(Const.API_KEY, page, 10)
+        // Gets a reference to our API
+        MoviesApp.instance().api()
+                // This returns a Observable<MovieResponse> from our API
+                .getMovies(Const.API_KEY, mCurrentPage, 10)
+                // We tell Android that we want to perform this task in the Schedulers.io() thread
+                // You could also spawn a new thread here if you wish
                 .subscribeOn(Schedulers.io())
+                // We tell Android that the results will be passed to the MainThread
+                // This allows us to update the UI
                 .observeOn(AndroidSchedulers.mainThread())
+                // We make a new Subscriber that will receive the data inside onNext
                 .subscribe(new RxSubscriber<>(this));
     }
 
     @Override
     public void onDataReady(MovieResponse data) {
+        // This gets called from our RxCallback<MovieResponse>
+        // All we need to do is call our Adapter method do add all items
         mAdapter.addAll(data.getMovies());
     }
 
     @Override
     public void onDataError(Throwable e) {
+        // If we have a error downloading the data we tell the user with a SnackBar
         Snackbar.make(mContainer, "Error downloading the Movie data. Try again later", Snackbar.LENGTH_LONG).show();
     }
 
     @Override
     public void onScrolled(int page) {
+        // This gets called from our onScrolledCallback
         getMovies(page);
     }
 

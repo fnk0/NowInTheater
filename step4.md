@@ -175,4 +175,35 @@ public class ApiClient {
 }
 ```
 
+### Adding a reference to the API inside the Application class
+
+You may have noticed that all the code inside NetworkClient and ApiClient just return new instances
+Those objects are fairly large and memory consuming, so we don't want to be instantiating them all the time
+Instead we use the Singleton Application class to hold a instance of our API that will be used across the application
+
+Open the MoviesApp class and add the following code:
+
+```java
+// Holds a reference to our API
+Api mApi;
+
+/**
+ * If the api is null them we make a new instance
+ * Otherwise we just return it
+ * This technique is called Lazy Instantiation allowing us to only instantiate singleton
+ * Objects when we actually need them rather than keeping objects not used in Memory
+ *
+ * @return
+ *      A instance of the Api
+ */
+public Api api() {
+    if(mApi == null) {
+        mApi = ApiClient.initApi(this);
+    }
+    return mApi;
+}
+
+```
+
+
 ###### We are done with the Api code! Head over to [Step 5](https://github.com/fnk0/NowInTheater/blob/master/step5.md) to implement the UI of our App.
