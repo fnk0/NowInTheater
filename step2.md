@@ -104,6 +104,45 @@ public final class MovieUtils {
 
 ###### Note: If you want your own Api Key [Click here](http://developer.rottentomatoes.com/member/register). I can not guarantee this key working past September 10th.
 
+### Defining our Styles:
+
+Open res/styles.xml and paste the following code:
+
+```xml
+
+<!-- Base application theme. -->
+<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_dark</item>
+    <item name="colorAccent">@color/accent_color</item>
+    <item name="android:windowBackground">@color/window_background</item>
+</style>
+
+<!-- Style for our RateBar showing the ratings of each movie -->
+<style name="RateBarSmall" parent="Widget.AppCompat.RatingBar" >
+    <item name="android:progressDrawable">@drawable/ic_rating</item>
+    <item name="android:numStars">5</item>
+    <item name="android:stepSize">20</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:minHeight">16dp</item>
+    <item name="android:maxHeight">16dp</item>
+    <item name="android:layout_marginLeft">4dip</item>
+    <item name="android:layout_marginTop">4dip</item>
+</style>
+
+<!-- Style for the Title of each List item -->
+<style name="ListItemTitle">
+    <item name="android:layout_marginBottom">8dp</item>
+    <item name="android:paddingLeft">8dp</item>
+    <item name="android:paddingRight">8dp</item>
+    <item name="android:paddingTop">4dp</item>
+    <item name="android:textAppearance">?textAppearanceListItem</item>
+</style>
+```
+##3
+
+
 ### Adding the Layouts:
 
 [Click here](https://github.com/fnk0/NowInTheater/tree/master/app/src/main/res/layout) and copy all these layouts. To understand more about some of those new layouts such as CoordinatorLayout and AppBarLayout [click here](http://android-developers.blogspot.com/2015/05/android-design-support-library.html)
