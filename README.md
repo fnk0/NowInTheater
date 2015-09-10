@@ -40,7 +40,13 @@ classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
 
 Now we gonna add the libraries that we need for our project:
 
-Inside build.gradle in the **app** module add the following inside dependencies:
+Inside build.gradle in the **app** module do the following:
+
+At the top level right below ``` apply plugin: 'com.android.application' ``` add this:
+
+```groovy
+apply plugin: 'com.neenbedankt.android-apt'
+```
 
 ```groovy
 
