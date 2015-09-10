@@ -30,6 +30,10 @@ I will briefly explain most of the concepts and the code but for a deeper unders
 
 ### Let's get started!!
 
+If you have not updated yet. Update your Android studio to the latest version. At the time of writing 1.4. Also update your SDK to v23.0
+
+Create a new Android project with the default settings (i.e. Min SDK 15, blank activity, etc..)
+
 First of all we should update our
 
 Top level build.gradle file. That is the build.gradle file that is in your project folder.
