@@ -66,6 +66,7 @@ public static final String MOVIE = "movie";
 public static final String PIC_INIT_URL = "dkpu1ddg7pbsk";
 public static final String TRANSITION_IMAGE = "imageTransition";
 public static final String LIST_POSITION = "listPosition";
+public static final String CURRENT_PAGE = "currentPage";
 ```
 
 ###### Note: If you want your own Api Key [Click here](http://developer.rottentomatoes.com/member/register). I can not guarantee this key working past September 10th.
