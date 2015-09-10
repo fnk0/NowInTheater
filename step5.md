@@ -309,3 +309,37 @@ public class MoviesFragment extends BaseRecyclerListFragment
 }
 ```
 
+### Adding the fragment to the Activity
+
+Uff!! This was a lot of code to not have anything on the Screen yet! Now it's time to add our fragment
+to the activity and test stuff!!
+
+Open MainActivity replace ``` extends AppCompatActivity ``` with ``` extends BaseActivity ``` and delete ALL the code inside and add the following
+
+```java
+
+// Reference to our moviesFragment
+MoviesFragment mFragment;
+
+@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    // Calls the BaseActivity method setTitle to set the Toolbar title
+    setTitle("Movies");
+
+    // We try to retrieve a instance of the fragment from the FragmentManager
+    // If a fragment is already in memory
+    mFragment = (MoviesFragment) mFragmentManager.findFragmentByTag(Const.MOVIE);
+
+    // If the fragment is null we make a new Instance
+    if (mFragment == null) {
+        mFragment = MoviesFragment.newInstance();
+    }
+
+    // We call the method from the BaseActivity and add our fragment
+    // Notice that the TAG is Const.MOVIE the same one that we used to retrieve the
+    // Fragment from the FragmentManager
+    addFragmentToContainer(mFragment, Const.MOVIE);
+}
+```
