@@ -25,7 +25,7 @@
       android:id="@+id/item_image"
       android:layout_width="match_parent"
       android:layout_height="240dp"
-      android:background="@color/grey_white_1000"
+      android:background="@android:color/white"
       tools:src="@mipmap/ic_launcher"
       />
 
