@@ -1,4 +1,4 @@
-## NowInTheater
+## Step 1: NowInTheater Setup
 
 This tutorial aims to show the usage of some advanced java/android libraries to speed up Android development.
 

@@ -29,12 +29,23 @@ public class ApiClient {
      */
     public static Api initApi(Application application) {
         return new RestAdapter.Builder()
+                // Sets the base Endpoint of this client
                 .setEndpoint(buildApiEndpointURL())
+                // If we are in a Debug build them we set the LogLevel to FULL
                 .setLogLevel(BuildConfig.DEBUG ? RestAdapter.LogLevel.FULL : RestAdapter.LogLevel.NONE)
+                // The HttpClient that we are going to use to by the Api
                 .setClient(NetworkClient.getOkClient(application))
-                .build().create(Api.class);
+                // Builds the RestAdapter that we is going to be used to create the API
+                .build()
+                // Creates the API
+                // Note: this should be the Api.class that we made
+                .create(Api.class);
     }
 
+    /**
+     * @return
+     *      The string with our Endpoint URL
+     */
     private static String buildApiEndpointURL() {
         return String.format("%s/%s", API_BASE_URL, API_VERSION);
     }

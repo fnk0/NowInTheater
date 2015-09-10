@@ -9,6 +9,12 @@ package com.gabilheri.nowinteather.ui;
  */
 public interface OnScrolledCallback {
 
+    /**
+     * This method will get called every time we hit the bottom of the screen and need to call
+     * the Api for more data
+     *
+     * @param page
+     *      The current page to be called
+     */
     void onScrolled(int page);
-
 }

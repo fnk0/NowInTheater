@@ -23,8 +23,18 @@ import timber.log.Timber;
  */
 public class NetworkClient {
 
+    // This is the Cache size that we are going to use for our HttpClient
     private static final int DISK_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
 
+    /**
+     * Only used internally
+     * Initializes the OkHttpClient and sets up the cache
+     *
+     * @param context
+     *      The context used to get the Android cache directory
+     * @return
+     *      A new instance of the HttpClient
+     */
     private static OkHttpClient initOkHttpClient(Context context) {
         OkHttpClient client = new OkHttpClient();
 
@@ -44,8 +54,16 @@ public class NetworkClient {
         return client;
     }
 
+    /**
+     * To specify the OkHttpClient we need to wrap it in a OkClient first to be used by Retrofit
+     *
+     * @param context
+     *      The context to be passed to the OkHttpClient initializer
+     * @return
+     *      THe OkClient instance
+     *
+     */
     public static Client getOkClient(Context context) {
         return new OkClient(initOkHttpClient(context));
     }
-
 }

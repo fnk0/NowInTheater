@@ -14,7 +14,7 @@ public class ScrollListener extends RecyclerView.OnScrollListener {
 
     int mPreviousTotal = 0; // The total number of items in the dataset after the last load
     boolean loading = true; // True if we are still waiting for the last set of data to load.
-    int visibleThreshold = 5; // The minimum amount of items to have below your current scroll position before loading more.
+    int visibleThreshold = 4; // The minimum amount of items to have below your current scroll position before loading more.
     int mFirstVisibleItem = 0;
     int mVisibleItemCount = 0;
     int mTotalItemCount = 0;
@@ -25,14 +25,6 @@ public class ScrollListener extends RecyclerView.OnScrollListener {
     public ScrollListener(GridLayoutManager mLinearLayoutManager, OnScrolledCallback mCallback) {
         this.mGridLayoutManager = mLinearLayoutManager;
         this.mCallback = mCallback;
-    }
-
-    public void resetCount() {
-        mCurrentPage = 1;
-        mPreviousTotal = 0;
-        mFirstVisibleItem = 0;
-        mVisibleItemCount = 0;
-        mTotalItemCount = 0;
     }
 
     @Override
@@ -49,6 +41,7 @@ public class ScrollListener extends RecyclerView.OnScrollListener {
                 mPreviousTotal = mTotalItemCount;
             }
         }
+
         if (!loading && (mTotalItemCount - mVisibleItemCount) <= (mFirstVisibleItem + visibleThreshold)) {
             mCurrentPage++;
             mCallback.onScrolled(mCurrentPage);

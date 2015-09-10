@@ -1,4 +1,4 @@
-## Coding the base classes
+## Step 3: Coding the base classes
 
 Now that we have our layouts in place we are going to code the base classes. Create a package called base and create the following classes.
 

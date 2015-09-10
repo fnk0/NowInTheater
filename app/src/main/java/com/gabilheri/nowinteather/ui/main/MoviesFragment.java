@@ -15,7 +15,7 @@ import com.gabilheri.nowinteather.base.ItemCallback;
 import com.gabilheri.nowinteather.base.RxCallback;
 import com.gabilheri.nowinteather.base.RxSubscriber;
 import com.gabilheri.nowinteather.data.endpoints.Movie;
-import com.gabilheri.nowinteather.data.endpoints.Movies;
+import com.gabilheri.nowinteather.data.endpoints.MovieResponse;
 import com.gabilheri.nowinteather.ui.OnScrolledCallback;
 import com.gabilheri.nowinteather.ui.ScrollListener;
 import com.gabilheri.nowinteather.ui.detail.DetailActivity;
@@ -37,7 +37,7 @@ import timber.log.Timber;
  * @since 9/7/15.
  */
 public class MoviesFragment extends BaseRecyclerListFragment
-        implements ItemCallback<View>, RxCallback<Movies>, OnScrolledCallback {
+        implements ItemCallback<View>, RxCallback<MovieResponse>, OnScrolledCallback {
 
     MoviesAdapter mAdapter;
     List<Movie> mItems;
@@ -89,7 +89,7 @@ public class MoviesFragment extends BaseRecyclerListFragment
     }
 
     @Override
-    public void onDataReady(Movies data) {
+    public void onDataReady(MovieResponse data) {
         mAdapter.addAll(data.getMovies());
     }
 
@@ -107,6 +107,8 @@ public class MoviesFragment extends BaseRecyclerListFragment
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelable(Const.MOVIE, Parcels.wrap(mItems));
-        outState.putInt(Const.LIST_POSITION, mGridLayoutManager.findFirstVisibleItemPosition());
+        if(mGridLayoutManager != null) {
+            outState.putInt(Const.LIST_POSITION, mGridLayoutManager.findFirstVisibleItemPosition());
+        }
     }
 }

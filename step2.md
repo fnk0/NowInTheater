@@ -1,4 +1,4 @@
-## The Basics
+## Step 2: The Basics
 
 We all know that java is a OOP language and one of the perks of using a OOP language is the ability to use inheritance and composition to abstract our code.
 Android uses the same concepts. To build any android app you will at least extend Activity.

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Parcel
-public class Movies {
+public class MovieResponse {
 
     @Expose
     private Integer total;
