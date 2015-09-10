@@ -18,6 +18,7 @@ This tutorial aims to show the usage of some advanced java/android libraries to 
 * Efficient image loading
 * Gracefully handle rotation changes
 * Infinite Scrolling
+* Using RecyclerView with GridLayout to handle different screen sizes
 * Design Support library animations
 
 This tutorial assumes that you already have a good understanding of Java and some knowledge of Android
