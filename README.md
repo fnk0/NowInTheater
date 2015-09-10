@@ -34,9 +34,7 @@ If you have not updated yet. Update your Android studio to the latest version. A
 
 Create a new Android project with the default settings (i.e. Min SDK 15, blank activity, etc..)
 
-First of all we should update our
-
-Top level build.gradle file. That is the build.gradle file that is in your project folder.
+First of all we should update our top level build.gradle file. That is the build.gradle file that is in your project folder.
 
 In the dependencies section we add
 

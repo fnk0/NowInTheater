@@ -72,7 +72,7 @@ public static final String CURRENT_PAGE = "currentPage";
 ### Utils:
 
 Most apps have utilities class which holds some Static methods used across the application. Since the rotten tomatoes API only gives us VERY small thumbnail images
-We are going to have a method here to modify the URL to get what we want.
+We are going to have a method here to modify/hijack the URL to get a full size image that will look good in the DetailActivity later on.
 
 Create a class named MovieUtils and add the following code:
 
