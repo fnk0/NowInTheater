@@ -120,24 +120,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * Adds a fragment to the Container of this activity otherwise will throw a exception
-     * The tag of a fragment can be used in some situations. The most common used cases are:
-     *
-     * 1. Retrieving a fragment from the BackStack
-     * 2. Using the FragmentManager to retrieve retained fragments
-     *
-     * @param fragment
-     *      The Fragment to be added
-     * @param tag
-     *      The string to be used as a Tag for this Fragment.
-     */
-    protected void addFragmentToContainer(@NonNull Fragment fragment, String tag) {
-        if (mContainerLayout != null) {
-            FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, fragment, tag).commit();
-        }
-        throw new Resources.NotFoundException("Could not find a container with R.id.container");
-    }
+    * Adds a fragment to the Container of this activity otherwise will throw a exception
+    * The tag of a fragment can be used in some situations. The most common used cases are:
+    *
+    * 1. Retrieving a fragment from the BackStack
+    * 2. Using the FragmentManager to retrieve retained fragments
+    *
+    * @param fragment
+    *      The Fragment to be added
+    * @param tag
+    *      The string to be used as a Tag for this Fragment.
+    */
+   protected void addFragmentToContainer(@NonNull Fragment fragment, String tag) {
+       FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+       fragmentTransaction.replace(R.id.container, fragment, tag).commit();
+   }
 }
 ```
 

@@ -13,4 +13,5 @@ public class Const {
     public static final String PIC_INIT_URL = "dkpu1ddg7pbsk";
     public static final String TRANSITION_IMAGE = "imageTransition";
     public static final String LIST_POSITION = "listPosition";
+    public static final String CURRENT_PAGE = "currentPage";
 }

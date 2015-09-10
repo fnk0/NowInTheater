@@ -2,8 +2,10 @@
 <FrameLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/container"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+  app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
   <android.support.v7.widget.RecyclerView
     android:id="@+id/recyclerview"
@@ -13,7 +15,6 @@
     android:paddingEnd="8dp"
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     />
 
 </FrameLayout>

@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
@@ -144,10 +143,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      *      The string to be used as a Tag for this Fragment.
      */
     protected void addFragmentToContainer(@NonNull Fragment fragment, String tag) {
-        if (mContainerLayout != null) {
-            FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, fragment, tag).commit();
-        }
-        throw new Resources.NotFoundException("Could not find a container with R.id.container");
+        FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment, tag).commit();
     }
 }

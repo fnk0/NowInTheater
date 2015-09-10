@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
  * @version 1.0
  * @since 9/4/15.
  */
+
 public class ScrollListener extends RecyclerView.OnScrollListener {
 
     int mPreviousTotal = 0; // The total number of items in the dataset after the last load
@@ -18,13 +19,21 @@ public class ScrollListener extends RecyclerView.OnScrollListener {
     int mFirstVisibleItem = 0;
     int mVisibleItemCount = 0;
     int mTotalItemCount = 0;
-    private int mCurrentPage = 1;
-    private GridLayoutManager mGridLayoutManager;
-    private OnScrolledCallback mCallback;
+    int mCurrentPage = 1;
+    GridLayoutManager mGridLayoutManager;
+    OnScrolledCallback mCallback;
 
     public ScrollListener(GridLayoutManager mLinearLayoutManager, OnScrolledCallback mCallback) {
         this.mGridLayoutManager = mLinearLayoutManager;
         this.mCallback = mCallback;
+    }
+
+    public void setCurrentPage(int currentPage) {
+        this.mCurrentPage = currentPage;
+    }
+
+    public void setTotalItemCount(int totalItemCount) {
+        this.mTotalItemCount = totalItemCount;
     }
 
     @Override

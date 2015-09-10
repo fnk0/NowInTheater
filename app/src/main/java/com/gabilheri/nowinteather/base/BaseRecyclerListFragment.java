@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.FrameLayout;
 
 import com.gabilheri.nowinteather.R;
 
@@ -20,6 +21,9 @@ public abstract class BaseRecyclerListFragment extends BaseFragment {
 
     @Bind(R.id.recyclerview)
     protected RecyclerView mRecyclerView; // Reference to our RecyclerView
+
+    @Bind(R.id.container)
+    protected FrameLayout mContainer; // The top level container. Used to display Snackbars
 
     @Nullable
     protected GridLayoutManager mGridLayoutManager;

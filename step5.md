@@ -34,13 +34,21 @@ public class ScrollListener extends RecyclerView.OnScrollListener {
     int mFirstVisibleItem = 0;
     int mVisibleItemCount = 0;
     int mTotalItemCount = 0;
-    private int mCurrentPage = 1;
-    private GridLayoutManager mGridLayoutManager;
-    private OnScrolledCallback mCallback;
+    int mCurrentPage = 1;
+    GridLayoutManager mGridLayoutManager;
+    OnScrolledCallback mCallback;
 
     public ScrollListener(GridLayoutManager mLinearLayoutManager, OnScrolledCallback mCallback) {
         this.mGridLayoutManager = mLinearLayoutManager;
         this.mCallback = mCallback;
+    }
+
+    public void setCurrentPage(int currentPage) {
+        this.mCurrentPage = currentPage;
+    }
+
+    public void setTotalItemCount(int totalItemCount) {
+        this.mTotalItemCount = totalItemCount;
     }
 
     @Override
@@ -57,6 +65,7 @@ public class ScrollListener extends RecyclerView.OnScrollListener {
                 mPreviousTotal = mTotalItemCount;
             }
         }
+
         if (!loading && (mTotalItemCount - mVisibleItemCount) <= (mFirstVisibleItem + visibleThreshold)) {
             mCurrentPage++;
             mCallback.onScrolled(mCurrentPage);
@@ -176,3 +185,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieHolder> {
     }
 }
 ```
+
+### The MoviesFragment
+
+So now that we have our MovieHolder and our MoviesAdapter for our list we are going to make the fragment that will hold that list
+Good news for you... we already have part of the code for this fragment written inside BaseRecyclerListFragment
+
+Our fragment will extend **BaseRecyclerListFragment** and implement or **RxCallback<MovieResponse>** and **OnScrolledCallback**
+
+```java
+
+```
+
